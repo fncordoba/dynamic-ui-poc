@@ -1,12 +1,14 @@
-// Auto-Discovery: Importa automáticamente todos los componentes .vue de /components/dynamic/
-const modules = import.meta.glob('../components/dynamic/*.vue', { eager: true })
+// Registramos explícitamente los componentes de Widgets para evitar dependencias circulares con DynamicRenderer
+import DataTable from '../components/dynamic/DataTable.vue'
+import MetricCardGroup from '../components/dynamic/MetricCardGroup.vue'
+import AlertBanner from '../components/dynamic/AlertBanner.vue'
+import UserForm from '../components/dynamic/UserForm.vue'
 
-export const COMPONENT_REGISTRY = {}
-
-for (const path in modules) {
-  // Extrae el nombre del archivo (ej: 'DataTable' de '../components/dynamic/DataTable.vue')
-  const componentName = path.split('/').pop().replace('.vue', '')
-  COMPONENT_REGISTRY[componentName] = modules[path].default
+export const COMPONENT_REGISTRY = {
+  DataTable,
+  MetricCardGroup,
+  AlertBanner,
+  UserForm
 }
 
-console.log('✨ [ComponentRegistry] Componentes descubiertos automáticamente:', Object.keys(COMPONENT_REGISTRY))
+console.log('✨ [ComponentRegistry] Registrados:', Object.keys(COMPONENT_REGISTRY))
