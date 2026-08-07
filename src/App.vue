@@ -5,7 +5,7 @@
       <div class="flex items-center gap-3">
         <span class="text-xl">🚀</span>
         <div>
-          <h1 class="text-sm font-extrabold text-white tracking-tight">Koltin Dynamic UI Architecture PoC</h1>
+          <h1 class="text-sm font-extrabold text-white tracking-tight">Dynamic UI Architecture PoC</h1>
           <p class="text-[11px] text-slate-400">Declarative Schema-Driven UI & Role-Based Layout Generator</p>
         </div>
       </div>
@@ -96,7 +96,7 @@
 
     <!-- Footer -->
     <footer class="bg-slate-900/60 border-t border-slate-800/80 px-6 py-3 text-center text-xs text-slate-500">
-      Koltin Engineering • Proof of Concept for Dynamic Schema-Driven Frontends
+      Proof of Concept • Dynamic Schema-Driven Frontend Architecture
     </footer>
   </div>
 </template>

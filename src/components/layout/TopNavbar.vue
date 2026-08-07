@@ -3,7 +3,7 @@
     <!-- Brand / Logo -->
     <div class="flex items-center gap-3">
       <div class="bg-indigo-600 font-extrabold text-white text-xs px-2.5 py-1 rounded-lg tracking-wider">
-        KOLTIN
+        NEXUS
       </div>
       <span class="text-xs text-slate-400 font-medium hidden sm:inline">Dynamic UI Engine</span>
     </div>

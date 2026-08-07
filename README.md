@@ -1,4 +1,4 @@
-# 🚀 Koltin Dynamic UI Schema & Role Configurator PoC
+# 🚀 Dynamic UI Schema & Role Configurator PoC
 
 An enterprise-grade **Declarative Schema-Driven UI Engine** & **Visual Role Configurator** built with **Vue 3**, **Vite**, **Tailwind CSS**, and **PHP**.
 
@@ -13,20 +13,20 @@ This project demonstrates a modern frontend architecture that completely elimina
 * **Real-time Reactive JSON Schema Inspector**: Live side-by-side JSON inspector that compiles and visualizes schema changes instantly.
 * **Global & Action-level Read-Only Mode**: Instant enforcement of `readOnly` state on forms, inputs, and mutation buttons.
 * **Role Impersonation Simulator**: Header bar to switch active roles (`Super Admin`, `Sales Agent`, `External Auditor`, Custom Roles) in 1-click to test dynamic rendering live.
-* **Component Registry & Auto-Discovery**: Scalable component mapping bridging JSON type strings to Vue 3 components.
+* **Component Registry**: Scalable component mapping bridging JSON type strings to Vue 3 components.
 
 ---
 
 ## 📸 Screenshots & Previews
 
 ### 1. Super Admin View (Full Access & All Tabs)
-![Super Admin View](https://raw.githubusercontent.com/fncordoba/dynamic-ui-poc/main/docs/screenshots/super_admin.png)
+![Super Admin View](docs/screenshots/super_admin.png)
 
-### 2. Ejecutivo de Ventas (Restricted Tabs & Hidden Columns)
-![Sales Agent View](https://raw.githubusercontent.com/fncordoba/dynamic-ui-poc/main/docs/screenshots/sales_agent.png)
+### 2. Sales Agent View (Restricted Tabs & Hidden Columns)
+![Sales Agent View](docs/screenshots/sales_agent.png)
 
 ### 3. Visual Role Configurator & Live JSON Inspector
-![Admin Configurator](https://raw.githubusercontent.com/fncordoba/dynamic-ui-poc/main/docs/screenshots/configurator.png)
+![Admin Configurator](docs/screenshots/configurator.png)
 
 ---
 
@@ -71,7 +71,7 @@ dynamic-ui-poc/
 
 ### Prerequisites
 * Node.js v18+ & npm
-* (Optional) PHP 8.1+ to test the backend API endpoint
+* (Optional) PHP 8.1+ to test backend persistence
 
 ### 1. Clone the repository
 ```bash

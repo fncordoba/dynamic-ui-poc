@@ -18,7 +18,7 @@
         <label class="block text-xs font-semibold text-slate-300 mb-1">Correo Electrónico</label>
         <input
           type="email"
-          value="a.sabella@koltin.com"
+          value="a.sabella@example.com"
           :disabled="globalReadOnly"
           class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-slate-100 focus:outline-none focus:border-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
         />

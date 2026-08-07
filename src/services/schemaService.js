@@ -18,7 +18,7 @@ export async function fetchRoles() {
   }
 
   // Fallback to localStorage or default dataset
-  const saved = localStorage.getItem('koltin_poc_roles')
+  const saved = localStorage.getItem('nexus_poc_roles')
   if (saved) {
     try {
       return JSON.parse(saved)
@@ -34,7 +34,7 @@ export async function saveRole(roleData) {
   // Sync to localStorage
   const currentRoles = await fetchRoles()
   currentRoles[roleData.id] = roleData
-  localStorage.setItem('koltin_poc_roles', JSON.stringify(currentRoles))
+  localStorage.setItem('nexus_poc_roles', JSON.stringify(currentRoles))
 
   try {
     const res = await fetch(API_BASE, {

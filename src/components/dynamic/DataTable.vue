@@ -93,7 +93,7 @@ const mockData = computed(() => {
 
   if (title.includes('certificado')) {
     return [
-      { cert_no: 'CERT-8840-X', holder: 'Koltin Health Tech Inc.', effective_date: '2026-01-01', status: 'EMITIDO' },
+      { cert_no: 'CERT-8840-X', holder: 'Nexus Tech Solutions Inc.', effective_date: '2026-01-01', status: 'EMITIDO' },
       { cert_no: 'CERT-8841-Y', holder: 'Asociados Co-op', effective_date: '2026-03-15', status: 'EN PROCESO' }
     ]
   }
