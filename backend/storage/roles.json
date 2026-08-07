@@ -1,0 +1,272 @@
+{
+  "super_admin": {
+    "id": "super_admin",
+    "name": "Super Admin",
+    "description": "Acceso total a todas las secciones, tablas, acciones y configuraciones.",
+    "readOnly": false,
+    "tabs": [
+      {
+        "id": "aplicaciones",
+        "label": "Aplicaciones",
+        "icon": "app-window",
+        "enabled": true,
+        "views": [
+          {
+            "id": "app_metrics",
+            "type": "MetricCardGroup",
+            "enabled": true,
+            "props": {
+              "title": "Métricas Globales de Aplicaciones"
+            },
+            "children": [
+              { "id": "m1", "type": "MetricCard", "enabled": true, "props": { "label": "Sol. Recibidas", "value": "1,420", "trend": "+12%", "color": "emerald" } },
+              { "id": "m2", "type": "MetricCard", "enabled": true, "props": { "label": "En Revisión", "value": "38", "trend": "-5%", "color": "amber" } },
+              { "id": "m3", "type": "MetricCard", "enabled": true, "props": { "label": "Aprobadas Hoy", "value": "124", "trend": "+18%", "color": "blue" } }
+            ]
+          },
+          {
+            "id": "app_table",
+            "type": "DataTable",
+            "enabled": true,
+            "props": {
+              "title": "Listado de Aplicaciones Recientes",
+              "columns": [
+                { "key": "id", "label": "ID", "enabled": true },
+                { "key": "applicant", "label": "Solicitante", "enabled": true },
+                { "key": "plan", "label": "Plan Afectado", "enabled": true },
+                { "key": "amount", "label": "Monto Asegurado", "enabled": true },
+                { "key": "status", "label": "Estado", "enabled": true }
+              ]
+            },
+            "actions": [
+              { "id": "act_new_app", "label": "+ Nueva Aplicación", "variant": "primary", "action": "create_app", "enabled": true, "readOnly": false },
+              { "id": "act_export_apps", "label": "Exportar CSV", "variant": "secondary", "action": "export_apps", "enabled": true, "readOnly": false }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "siniestros",
+        "label": "Siniestros",
+        "icon": "shield-alert",
+        "enabled": true,
+        "views": [
+          {
+            "id": "claim_banner",
+            "type": "AlertBanner",
+            "enabled": true,
+            "props": {
+              "type": "warning",
+              "message": "Hay 3 siniestros de alta prioridad pendientes de resolución médica."
+            }
+          },
+          {
+            "id": "claim_table",
+            "type": "DataTable",
+            "enabled": true,
+            "props": {
+              "title": "Portal de Reclamos y Siniestros",
+              "columns": [
+                { "key": "claim_no", "label": "Nº Siniestro", "enabled": true },
+                { "key": "member", "label": "Asegurado", "enabled": true },
+                { "key": "type", "label": "Tipo Cobertura", "enabled": true },
+                { "key": "claimed_amount", "label": "Monto Reclamado", "enabled": true },
+                { "key": "status", "label": "Estado Actual", "enabled": true },
+                { "key": "date", "label": "Fecha Ingreso", "enabled": true }
+              ]
+            },
+            "actions": [
+              { "id": "act_approve", "label": "Aprobar Siniestro", "variant": "success", "action": "approve_claim", "enabled": true, "readOnly": false },
+              { "id": "act_reject", "label": "Rechazar Siniestro", "variant": "danger", "action": "reject_claim", "enabled": true, "readOnly": false },
+              { "id": "act_download_pdf", "label": "Descargar PDF Adjuntos", "variant": "secondary", "action": "download_pdf", "enabled": true, "readOnly": false }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "certificados",
+        "label": "Certificados",
+        "icon": "file-text",
+        "enabled": true,
+        "views": [
+          {
+            "id": "cert_table",
+            "type": "DataTable",
+            "enabled": true,
+            "props": {
+              "title": "Emisión de Certificados",
+              "columns": [
+                { "key": "cert_no", "label": "Nº Certificado", "enabled": true },
+                { "key": "holder", "label": "Titular", "enabled": true },
+                { "key": "effective_date", "label": "Vigencia Desde", "enabled": true },
+                { "key": "status", "label": "Estado Emisión", "enabled": true }
+              ]
+            },
+            "actions": [
+              { "id": "act_emit_cert", "label": "Emitir Certificado", "variant": "primary", "action": "emit_cert", "enabled": true, "readOnly": false }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "usuarios",
+        "label": "Usuarios",
+        "icon": "users",
+        "enabled": true,
+        "views": [
+          {
+            "id": "user_form",
+            "type": "UserForm",
+            "enabled": true,
+            "props": {
+              "title": "Gestión Directa de Usuarios y Roles"
+            },
+            "actions": [
+              { "id": "act_save_user", "label": "Guardar Usuario", "variant": "primary", "action": "save_user", "enabled": true, "readOnly": false }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sales_agent": {
+    "id": "sales_agent",
+    "name": "Ejecutivo de Ventas",
+    "description": "Acceso enfocado en creación de Aplicaciones y consulta de Certificados. Sin acceso a Usuarios ni resolución de Siniestros.",
+    "readOnly": false,
+    "tabs": [
+      {
+        "id": "aplicaciones",
+        "label": "Aplicaciones",
+        "icon": "app-window",
+        "enabled": true,
+        "views": [
+          {
+            "id": "app_metrics",
+            "type": "MetricCardGroup",
+            "enabled": true,
+            "props": { "title": "Mis Métricas de Venta" },
+            "children": [
+              { "id": "m1", "type": "MetricCard", "enabled": true, "props": { "label": "Mis Solicitudes", "value": "45", "trend": "+8%", "color": "emerald" } },
+              { "id": "m3", "type": "MetricCard", "enabled": true, "props": { "label": "Aprobadas Este Mes", "value": "32", "trend": "+15%", "color": "blue" } }
+            ]
+          },
+          {
+            "id": "app_table",
+            "type": "DataTable",
+            "enabled": true,
+            "props": {
+              "title": "Mis Aplicaciones Ingresadas",
+              "columns": [
+                { "key": "id", "label": "ID", "enabled": true },
+                { "key": "applicant", "label": "Solicitante", "enabled": true },
+                { "key": "plan", "label": "Plan Afectado", "enabled": true },
+                { "key": "status", "label": "Estado", "enabled": true }
+              ]
+            },
+            "actions": [
+              { "id": "act_new_app", "label": "+ Nueva Aplicación", "variant": "primary", "action": "create_app", "enabled": true, "readOnly": false }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "certificados",
+        "label": "Certificados",
+        "icon": "file-text",
+        "enabled": true,
+        "views": [
+          {
+            "id": "cert_table",
+            "type": "DataTable",
+            "enabled": true,
+            "props": {
+              "title": "Consulta de Certificados de Clientes",
+              "columns": [
+                { "key": "cert_no", "label": "Nº Certificado", "enabled": true },
+                { "key": "holder", "label": "Titular", "enabled": true },
+                { "key": "effective_date", "label": "Vigencia Desde", "enabled": true }
+              ]
+            },
+            "actions": []
+          }
+        ]
+      },
+      {
+        "id": "siniestros",
+        "label": "Siniestros",
+        "icon": "shield-alert",
+        "enabled": false,
+        "views": []
+      },
+      {
+        "id": "usuarios",
+        "label": "Usuarios",
+        "icon": "users",
+        "enabled": false,
+        "views": []
+      }
+    ]
+  },
+  "claims_auditor": {
+    "id": "claims_auditor",
+    "name": "Auditor Externo de Siniestros (Read-Only)",
+    "description": "Acceso restringido únicamente a la vista de Siniestros en modo LECTURA estricta. Botones de acción deshabilitados.",
+    "readOnly": true,
+    "tabs": [
+      {
+        "id": "siniestros",
+        "label": "Siniestros",
+        "icon": "shield-alert",
+        "enabled": true,
+        "views": [
+          {
+            "id": "claim_banner",
+            "type": "AlertBanner",
+            "enabled": true,
+            "props": {
+              "type": "info",
+              "message": "Perfil de Auditoría Externa: Todos los registros se encuentran en modo Solo Lectura."
+            }
+          },
+          {
+            "id": "claim_table",
+            "type": "DataTable",
+            "enabled": true,
+            "props": {
+              "title": "Auditoría de Siniestros y Reclamos",
+              "columns": [
+                { "key": "claim_no", "label": "Nº Siniestro", "enabled": true },
+                { "key": "member", "label": "Asegurado", "enabled": true },
+                { "key": "claimed_amount", "label": "Monto Reclamado", "enabled": true },
+                { "key": "status", "label": "Estado Actual", "enabled": true },
+                { "key": "date", "label": "Fecha Ingreso", "enabled": true }
+              ]
+            },
+            "actions": [
+              { "id": "act_download_pdf", "label": "Descargar PDF Adjuntos", "variant": "secondary", "action": "download_pdf", "enabled": true, "readOnly": true }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "aplicaciones",
+        "label": "Aplicaciones",
+        "enabled": false,
+        "views": []
+      },
+      {
+        "id": "certificados",
+        "label": "Certificados",
+        "enabled": false,
+        "views": []
+      },
+      {
+        "id": "usuarios",
+        "label": "Usuarios",
+        "enabled": false,
+        "views": []
+      }
+    ]
+  }
+}
